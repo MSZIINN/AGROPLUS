@@ -1,0 +1,10 @@
+package br.ufpb.dcx.agroplus.model;
+import java.time.LocalDate; import java.util.ArrayList; import java.util.List;
+public class Funcionario {
+ private int id; private String nomeCompleto,cpf,cargo,telefone,email,senha; private LocalDate dataAdmissao; private String tipoAcesso;
+ public Funcionario(int id,String nomeCompleto,String cpf,String cargo,String telefone,String email,String senha,LocalDate dataAdmissao,String tipoAcesso){this.id=id;this.nomeCompleto=nomeCompleto;this.cpf=cpf;this.cargo=cargo;this.telefone=telefone;this.email=email;this.senha=senha;this.dataAdmissao=dataAdmissao;this.tipoAcesso=tipoAcesso;}
+ public boolean autenticar(String email,String senha){return this.email.equalsIgnoreCase(email)&&this.senha.equals(senha);} public void alterarCargo(String novoCargo){cargo=novoCargo;} public void demitir(){cargo="Demitido";tipoAcesso="comum";}
+ public List<String> getPermissoes(){List<String> p=new ArrayList<>();p.add("VISUALIZAR_DASHBOARD");p.add("VISUALIZAR_ANIMAIS");p.add("REGISTRAR_PESO");p.add("REGISTRAR_PRODUCAO");p.add("REGISTRAR_ESTOQUE");if("administrador".equalsIgnoreCase(tipoAcesso)){p.add("GERENCIAR_FUNCIONARIOS");p.add("EXCLUIR_REGISTROS");p.add("GERAR_RELATORIOS");}return p;}
+ public void alterarSenha(String novaSenha){senha=novaSenha;}
+ public int getId(){return id;} public void setId(int v){id=v;} public String getNomeCompleto(){return nomeCompleto;} public void setNomeCompleto(String v){nomeCompleto=v;} public String getCpf(){return cpf;} public void setCpf(String v){cpf=v;} public String getCargo(){return cargo;} public void setCargo(String v){cargo=v;} public String getTelefone(){return telefone;} public void setTelefone(String v){telefone=v;} public String getEmail(){return email;} public void setEmail(String v){email=v;} public String getSenha(){return senha;} public void setSenha(String v){senha=v;} public LocalDate getDataAdmissao(){return dataAdmissao;} public void setDataAdmissao(LocalDate v){dataAdmissao=v;} public String getTipoAcesso(){return tipoAcesso;} public void setTipoAcesso(String v){tipoAcesso=v;}
+}
