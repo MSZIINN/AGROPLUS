@@ -71,7 +71,5 @@ O projeto inclui diagramas de casos de uso, classes, sequência, arquitetura e d
 
 ## Equipe de Desenvolvimento
 
-- **Rhauany Aragão** - Desenvolvimento
 - **Mariano Santos da Silva** - Desenvolvimento
-- **[Nome do integrante]** - Desenvolvimento
-- **[Nome do integrante]** - Desenvolvimento
+- **Rhauany Aragão** - Desenvolvimento
